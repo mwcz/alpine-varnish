@@ -8,4 +8,6 @@ RUN apk add varnish curl
 
 ADD alpine-varnish.tar.gz /
 
+EXPOSE 80
+
 ENTRYPOINT ["/usr/local/bin/start"]
