@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>SPANDEX Error 503</title>
+        <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+        <style type="text/css" media="screen">
+            html {
+                height: 100%;
+            }
+            body {
+                background: linear-gradient(to bottom, #c1fbff, #5bcaed);
+                height: 100%;
+                margin: 0;
+                background-repeat: no-repeat;
+                color: white;
+                text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+                font-family: 'Overpass', sans-serif;
+            }
+            .notice {
+                border-radius: 50%;
+                background: linear-gradient(to bottom, #f8ff84, #ff7938);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 50vh;
+                width: 50vh;
+                text-align: center;
+                padding: 10vh 5vh 0;
+                box-sizing: border-box;
+                font-size: 4vh;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="notice">
+            <p>SPANDEX isn't able to contact your application.</p>
+            <p>Is it listening on <b>{{APP_IP}}:{{APP_PORT}}</b>?</p>
+        </main>
+    </body>
+</html>

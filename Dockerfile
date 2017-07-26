@@ -6,7 +6,7 @@ ENV LANG en_US.utf8
 RUN apk update
 RUN apk add varnish curl
 
-ADD alpine-varnish.tar.gz /
+ADD alpine-varnish/ /
 
 EXPOSE 80
 

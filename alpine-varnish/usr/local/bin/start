@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# substitute necessary environment variables into varnish configs
+sed -i "s/{{\s*APP_IP\s*}}/$APP_IP/" /etc/varnish/default.vcl
+sed -i "s/{{\s*APP_PORT\s*}}/$APP_PORT/" /etc/varnish/default.vcl
+sed -i "s/{{\s*APP_IP\s*}}/$APP_IP/" /etc/varnish/503.html
+sed -i "s/{{\s*APP_PORT\s*}}/$APP_PORT/" /etc/varnish/503.html
+
+sleep 1s && varnishlog -a -w /var/log/varnish/access.log -D -P /var/run/varnishlog.pid -A &
+
+# start varnish
+varnishd -F -f /etc/varnish/default.vcl >> /var/log/varnish/start.log 2>&1
